@@ -1,4 +1,7 @@
 function toggleMenu() {
     const menu = document.querySelector(".menu");
-    menu.classList.toggle("show");
+    const hamburger = document.querySelector(".hamburger");
+
+    menu.classList.toggle("show"); // Show/hide menu
+    hamburger.classList.toggle("active"); // Change icon to "X"
 }
