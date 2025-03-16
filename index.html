@@ -13,7 +13,6 @@
         .library {
         width: 100%;
         min-height: 100vh;
-        padding-top: 10%;
         margin: auto 20px;
 }
         h1{
@@ -47,6 +46,20 @@
 </head>
 <body>
         <div class="container">
+            <img class="logo" src="image/cropped-jonaxx-logo-horizontal-2.png" width="500px">
+            <button class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <div class="menu">
+                    <a href="index.html" class="active">Library</a>
+                    <a href="myjournal.html">My Journal</a>
+                    <a href="#">Bookmarks</a>
+                    <a href="#" >About</a>
+            </div>
+        </div>
+        <div class="container-HIDDEN">
             <img class="logo" src="image/cropped-jonaxx-logo-horizontal-2.png" width="500px">
             <button class="hamburger" onclick="toggleMenu()">
                 <div class="bar"></div>
