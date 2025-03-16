@@ -32,7 +32,7 @@
 
 @media (max-width: 500px) {
     .library {
-        padding-top: 40%;
+        padding-top: 100px;
     }
     .logo{
         margin-top: 3%;
@@ -63,7 +63,7 @@
         cursor: pointer;
         position: absolute;
         top: 15px;
-        right: 30px;
+        right: 50px;
         z-index: 100;
     }
 
