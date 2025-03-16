@@ -1,3 +1,4 @@
+
 @media (max-width: 1020px) {
     .logo{
         margin-top: 3%;
@@ -5,9 +6,7 @@
         height: 10%;
     }
     
-    .library {
-        padding-top: 30%;
-    }
+    
 }
 
 @media (max-width: 900px) {
@@ -25,15 +24,11 @@
         background-color: white; 
         box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2);
     }
-    .library {
-        padding-top: 20%;
-    }
+    
 }
 
 @media (max-width: 500px) {
-    .library {
-        padding-top: 30%;
-    }
+    
     .logo{
         margin-top: 3%;
         width: 50%;
@@ -63,7 +58,7 @@
         cursor: pointer;
         position: absolute;
         top: 15px;
-        right: 20%;
+        right: 15%;
         z-index: 100;
     }
 
