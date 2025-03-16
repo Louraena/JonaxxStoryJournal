@@ -1,0 +1,59 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Great Vibes', cursive;
+}
+
+body{
+    display: block;
+}
+
+.container{
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: white; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    z-index: 1000;
+   
+}
+
+
+.hamburger{
+    display: none;
+}
+
+.logo{
+    width: 30%;
+    height: auto;
+}
+.menu{
+    gap: 20px;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: row;
+    margin: 10px auto;
+}
+
+
+a{
+    text-decoration: none;
+    color: #FF3E7E;
+}
+
+.active{
+    color: #FF3E7E;
+    font-weight: bold;
+}
+
+a:hover{
+    color: #ff9ebe;
+}
+
+
+
+
+

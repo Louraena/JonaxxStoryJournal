@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <script src="script.js"></script>
+    <title>Library</title>
+
+    <style>
+        .library {
+        width: 100%;
+        min-height: 100vh;
+        padding-top: 10%;
+        margin: auto 20px;
+}
+        h1{
+            color:#FF3E7E;
+        }
+        h6{
+            margin-top: 2%;
+            align-items: center;
+            font-size: 1rem;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            padding: 20px 0;
+        }
+
+        .book-container img{
+            border-radius: 10%;
+        }
+        .book {
+            display: flex;
+            flex-direction: column;
+            width: 120px;
+        }
+        .book img {
+            width: 100px;
+            height: 157px;
+        }
+    </style>
+</head>
+<body>
+        <div class="container">
+            <img class="logo" src="image/cropped-jonaxx-logo-horizontal-2.png" width="500px">
+            <button class="hamburger" onclick="toggleMenu()">
+                <div class="bar"></div>
+                <div class="bar"></div>
+                <div class="bar"></div>
+            </button>
+            <div class="menu">
+                    <a href="library.html" class="active">Library</a>
+                    <a href="myjournal.html">My Journal</a>
+                    <a href="#">Bookmarks</a>
+                    <a href="#" >About</a>
+            </div>
+        </div>
+
+        <div class="library">
+            <h1>After The Last Series</h1>
+            <div class="book-container">
+                <a href="Books/HushedThunder.html" class="book">
+                    <img src="image/hushThunder.png" alt="Hushed Thunder">
+                    <h6>Hushed Thunder</h6>
+                </a>
+            </div>
+            
+            <h1>Alegria Boys Series</h1>
+            <div class="book-container">
+                <a href="Books/BakaSakali1.html" class="book">
+                    <img src="image/bakaSakali.png" alt="Baka Sakali 1">
+                    <h6>Baka Sakali 1</h6>
+                </a>
+                <a href="Books/BakaSakali2.html" class="book">
+                    <img src="image/bakaSakali.png" alt="Baka Sakali 2">
+                    <h6>Baka Sakali 2</h6>
+                </a>
+                <a href="Books/BakaSakali3.html" class="book">
+                    <img src="image/bakaSakali.png" alt="Baka Sakali 3">
+                    <h6>Baka Sakali 3</h6>
+                </a>
+                <a href="Books/MapapansinKaya.html" class="book">
+                    <img src="image/mapapansinkaya.png" alt="Mapapansin Kaya">
+                    <h6>Mapapansin Kaya</h6>
+                </a>
+                <a href="Books/EndThisWar.html" class="book">
+                    <img src="image/endthiswar.png" alt="End This War">
+                    <h6>End This War</h6>
+                </a>
+            </div>
+            <h1>Alegria Girls Series</h1>
+            <div class="book-container">
+                    <a href="Books/whipped.html">
+                        <div class="AlegriaGirl">
+                            <img src="image/whipped.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Whipped: Entice</h6>
+                        </div>
+                    </a>
+                    <a href="Books/Ripped.html">
+                        <div class="AlegriaGirl">
+                            <img src="image/ripped.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Ripped:Freya</h6>
+                        </div>
+                    </a>
+                    <a href="Books/Tripped.html">
+                        <div class="AlegriaGirl">
+                            <img src="image/tripped.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Tripped: Lilienne</h6>
+                        </div>
+                    </a>
+            </div>
+            
+            
+                <h1>Art of Seduction Series</h1>
+                <div class="book-container">
+                    <a href="Books/TrainingToLove.html">
+                        <div class="trainingtolovr">
+                            <img src="image/trainingtolove.png" width="100px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Training To Love</h6>
+                        </div>
+                    </a>
+                    <a href="Books/Whydoyouhateme.html">
+                        <div class="why do you hate me">
+                            <img src="image/whydoyouhateme.png" width="100px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Why Do You Hate Me?</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>Azucarera Series</h1>
+                <div class="book-container">
+                    <a href="Books/AgainstTheHeart.html">
+                        <div class="againsttheheart">
+                            <img src="image/againsttheheart.png" width="100px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Agaisnt The Heart</h6>
+                        </div>
+                    </a>
+                    <a href="Books/GettingToYou.html">
+                        <div class="gettingtoyou">
+                            <img src="image/gettingtoyou.png" width="100px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Getting To You</h6>
+                        </div>
+                    </a>
+                    <a href="Books/HoldMeClose.html">
+                        <div class="holdmeclose">
+                            <img src="image/holdmeclose.png" width="100px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Hold Me Close</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>City of Embers Series</h1>
+                <div class="book-container">
+                    <a href="Books/WhenTheParadeEnds.html">
+                        <div class="whentheparadiseends">
+                            <img src="image/WhentheparadiseEnds.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">When The Paradise Ends</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+
+                <h1>Costa Leona Series</h1>
+                <div class="book-container">
+                    <a href="Books/SchorchingLove.html">
+                        <div class="Schorchinglove">
+                            <img src="image/schorchinglove.png"  width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Schorching Love</h6>
+                        </div>
+                    </a>
+                    <a href="Books/WavesOfMemories.html">
+                        <div class="WavesofMemories">
+                            <img src="image/wavesofmemories.png"  width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Waves Of Memories</h6>
+                        </div>
+                    </a>
+                    <a href="Books/IslandOfFire.html">
+                        <div class="Island of fire">
+                            <img src="image/islandoffire.png"  width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Island Of Fire</h6>
+                        </div>
+                    </a>
+                    <a href="Books/BlownByTheWind.html">
+                        <div class="blownbythewind">
+                            <img src="image/blownbythewind.png" width="100px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Blown By The Wind</h6>
+                        </div>
+                    </a>
+                    <a href="Books/WhatliesBeneathTheSand.html">
+                        <div class="whatliesbeneaththesand">
+                            <img src="image/whatliesbeneaththesand.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">What Lies The Sand</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="sandsoftime">
+                            <img src="image/sandsoftime.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Sands Of Time</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="rulingthewildwaves">
+                            <img src="image/rulingthewildwaves.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Ruling The Wild Waves</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="SunburnedHearth">
+                            <img src="image/sunbirnedheart.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Sunburned Heart</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="whisperofthewind">
+                            <img src="image/whisperinthewind.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Whispers Of The Wind</h6>
+                        </div>
+                    </a>
+                    
+                    
+                <div class="book-container">
+                    <a href="#">
+                        <div class="loveinthedark">
+                            <img src="image/loveinthedark.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Love In The Dark</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="kissingthedust">
+                            <img src="image/kissingthedust.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Kissing The Dust</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="sweetflamesofvegeance">
+                            <img src="image/sweetflamesofvengeance.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Sweet Flames Of Vengeance</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="afterthechains">
+                            <img src="image/afterthechains.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">After The Chains</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="theSunsHearthbeat">
+                            <img src="image/thesunsheartbeat.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">The Sun's Heartbeat</h6>
+                        </div>
+                    </a>
+                    
+
+                </div>
+            </div>
+                <h1>Del Fierro Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div class="OneRebelliousnight">
+                            <img src="image/one rebillious night.jpg" width="100px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">One Rebellious Night</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="thebeastinparadise">
+                            <img src="image/the beast in paradise.jpg" width="100px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">The Beast In Paradise</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="givingYouWildfire">
+                            <img src="image/giving you wildfire.png" width="100px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Giving You Wildfire</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+                
+
+
+                <h1>Elizalde Brothers Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div class="heartless">
+                            <img src="image/heartless.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Heartless</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="worthless">
+                            <img src="image/worthless.jpg" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Worthless</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>Good Lips Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div class="Every Beast Needs A Beauty">
+                            <img src="image/every beauty needs a beast.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Every Beast Needs A Beauty</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="One Night, One Lie">
+                            <img src="image/one night one lie.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">One Night, One Lie</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="Give In To You">
+                            <img src="image/give in to you.jfif" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Give In To You</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>Jimenez Cousins Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div class="Invisible Man">
+                            <img src="image/invisible man.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Invisible Man</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="No Perfect Prince">
+                            <img src="image/no perfect prince.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">No Perfect Prince</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="Chase & Hearts">
+                            <img src="image/chase and hearts.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Chase & Hearts</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+                <h1>Montefalco Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div class="Until He Was Gone">
+                            <img src="image/until_he_was_gone.jpg" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Unti He Was Gone</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="Until He Returned">
+                            <img src="image/Until He Returned.jpg" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Until He Returned</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="Until Forever">
+                            <img src="image/Until Forever.jfif" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Until Forever</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="To Stay">
+                            <img src="image/To Stay.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">To Stay</h6>
+                        </div>
+                    </a>
+                    <a href="#">
+                        <div class="To Fall Again">
+                            <img src="image/To Fall Again.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">To Fall Again</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div class="To Be With You">
+                            <img src="image/To Be With You.jpg" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">To Be With You</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/To Get Over You.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">To Get Over You</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/From Afar.jfif" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">From Afar</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/Stay Forever.png" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Stay Forever</h6>
+                        </div>
+                    </a>
+                    
+
+                </div>
+
+                <h1>Nuevo Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div>
+                            <img src="image/from_the_start.jpg" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">From The Start</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/it was you.jfif" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">It Was You</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/till the very end.jfif" width="100px" height="157px"style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Till The Very End</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>One Shot</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div>
+                            <img src="image/Nung Na-realize Mo Na.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Nung Na-realize Mo Na</h6>
+                        </div>
+
+                    </a>
+                    
+                </div>
+
+                <h1>Rara Avis Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div>
+                            <img src="image/Shelter In Your Fingertips.jpg" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Shelter In Your Fingertips</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/A Call To Your Arms.jpg" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">A Call To Your Arms</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/Rushing Through My Veins.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Rushing Through My Veins</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/Never Just Skin Deep.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Never Just Skin Deep</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>Stand Alone Old Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div>
+                            <img src="image/Downfall Chronicles.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Downfall Chronicles</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/Just That.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Just That</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/24 Signs Of Summer.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">24 Signs Of Summer</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/Remembering Summer.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Remembering Summer</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+
+                <h1>Viejo Series</h1>
+                <div class="book-container">
+                    <a href="#">
+                        <div>
+                            <img src="image/Light A Candle.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">Light A Candle</h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/In Front Of The Mirror.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">In Front Of The Mirror </h6>
+                        </div>
+                    </a>
+                    
+                    <a href="#">
+                        <div>
+                            <img src="image/At Midnight.png" width="100px" height="157px" style="margin-right: 15px;">
+                            <h6 style="width: 100px; text-align: center;">At Midnight</h6>
+                        </div>
+                    </a>
+                    
+                </div>
+            </div>
+        </div>
+    
+               
+        
+        
+</body>
+</html>
