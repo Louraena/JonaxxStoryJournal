@@ -32,24 +32,22 @@
 
 @media (max-width: 500px) {
     .library {
-        padding-top: 30%;
+        padding-top: 40%;
     }
     .logo{
         margin-top: 3%;
         width: 50%;
         height: 10%;
+        z-index: 100;
+        
     }
     .menu{
         display: none; 
         flex-direction: column;
-        top: 10%;
-        left: 70%;
-        bottom: 50%;
-        width: 150px;
-        height: 50%;
+        top: 1%;
         background-color: white; 
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-        font-size: 1.5rem;
+        font-size: 3rem;
         align-items: center;
         margin: 5px;
     }
@@ -74,5 +72,17 @@
         height: 4px;
         background: #FF3E7E;
         margin: 5px 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(9px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-9px) rotate(-45deg);
     }
 }
