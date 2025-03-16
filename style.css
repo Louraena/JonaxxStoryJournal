@@ -5,6 +5,9 @@
     box-sizing: border-box;
     font-family: 'Great Vibes', cursive;
 }
+.container-HIDDEN{
+    visibility:hidden;
+}
 
 body{
     display: block;
@@ -52,7 +55,6 @@ a{
 a:hover{
     color: #ff9ebe;
 }
-
 
 
 
