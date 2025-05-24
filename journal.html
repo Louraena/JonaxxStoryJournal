@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Jonaxx Story</title>
+
+    <style>
+      body {
+        padding: 20px;
+      }
+  
+      #search-bar {
+        width: 90%;
+        padding: 10px;
+        font-size: 16px;
+        border: 1px solid rgb(227, 104, 125);
+        box-shadow: 0 2px 5px rgb(239, 124, 143);
+        border-radius: 5px;
+        background-color: transparent;
+        color: white;
+        position: fixed;
+        z-index: 1000;
+      }
+      #search-bar::placeholder{
+        color: white;
+      }
+
+      #search-bar:focus {
+        border: 1px solid rgb(193, 60, 82); 
+        box-shadow: 0 2px 5px rgb(102, 53, 61); 
+        outline: none; 
+        background-color: transparent;
+    }
+  
+      .seriesname {
+        margin-top: 80px;
+        color: white;
+      }
+  
+      .seriesname h2 {
+        font-size: 22px;
+        margin-bottom: 15px;
+        color: white;
+      }
+  
+      .books {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: flex-start;
+      }
+  
+      .book {
+        width: 100px;
+        text-align: center;
+        background-color: transparent;
+        padding: 10px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgb(239, 124, 143);
+        transition: 0.5s ease-in-out;
+      }
+      .book:hover{
+        width: 110px;
+        box-shadow: 0 2px 5px rgb(174, 80, 96);
+      }
+  
+      .book img {
+        width: 100%;
+        height: auto;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgb(209, 93, 112);
+      }
+  
+      .book p {
+        margin-top: 10px;
+        font-weight: bold;
+        font-size: 14px;
+        background-color: transparent;
+        color: white;
+      }
+
+      .intro {
+        margin-top: 40px;
+      }
+      #results{
+        padding-top: 20px;
+        color: white;
+      }
+
+      .navigation {
+    padding-bottom: 80px;
+  }
+
+  
+    </style>
+</head>
+<body>
+
+    <div class="navigation">
+        <div class="logo">Jonaxx Story Journal</div>
+      
+        <div class="burger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+      
+        <div class="navi">
+          <a href="index.html">Home</a>
+          <a href="journal.html" class="active">Journal</a>
+          <a href="jonaxx.html" >Jonaxx</a>
+          <a href="Profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="intro">
+      <div class="search-container">
+        <input type="text" id="search-bar" placeholder="Search for books or series..." oninput="search()">
+      </div>
+    
+      <div id="results"> </div>
+    </div>
+    <img src="">
+    <script src="script.js"></script>
+    <script>
+      const seriesData = [
+        {
+          seriesTitle: 'Alegria Boys Series',
+          books: [
+            { title: 'Baka Sakali 1', image: 'image/bakaSakali.png'},
+            { title: 'Baka Sakali 2', image: 'image/bakaSakali.png' },
+            { title: 'Baka Sakali 3', image: 'image/bakaSakali.png' },
+            { title: 'Mapapansin Kaya', image: 'image/mapapansinkaya.png' },
+            { title: 'End This War', image: 'image/endthiswar.png',}
+          ]
+        },
+        {
+          seriesTitle: 'Alegria Girls Series',
+          books: [
+            { title: 'Whipped Entice', image: 'image/whipped.png',},
+            { title: 'Ripped Freya', image: 'image/ripped.png' },
+            { title: 'Tripped Lilienne', image: 'image/tripped.png',}
+          ]
+        },
+        {
+          seriesTitle: 'Art Of Seduction Series',
+          books: [
+            { title: 'Training To Love', image: 'image/trainingtolove.png' },
+            { title: 'Why Do You Hate Me', image: 'image/whydoyouhateme.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Azucarera Series',
+          books: [
+            { title: 'Against The Heart', image: 'image/againsttheheart.png' },
+            { title: 'Getting To You', image: 'image/gettingtoyou.png' },
+            { title: 'Hold Me Close', image: 'image/holdmeclose.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Costa Leona Series',
+          books: [
+            { title: 'Scorching Love', image: 'image/schorchinglove.png' },
+            { title: 'Waves Of Memories', image: 'image/wavesofmemories.png' },
+            { title: 'Island of fire', image: 'image/islandoffire.png' },
+            { title: 'Blown By The Wind', image: 'image/blownbythewind.png' },
+            { title: 'What Lies The Sand', image: 'image/whatliesbeneaththesand.png'},
+            { title: 'Sands Of Time', image: 'image/sandsoftime.png'},
+            { title: 'Ruling The Wild Waves', image: 'image/rulingthewildwaves.png'},
+            { title: 'Sunburned Heart', image: 'image/sunbirnedheart.png'},
+            { title: 'Whispers Of The Wind', image: 'image/whisperinthewind.png'},
+            { title: 'Love In The Dark', image: 'image/loveinthedark.png'},
+            { title: 'Kissing The Dust', image: 'image/kissingthedust.png'},
+            { title: 'Sweet Flames Of Vengeance', image: 'image/sweetflamesofvengeance.png'},
+            { title: 'After The Chains', image: 'image/afterthechains.png'},
+            { title: 'The Sun Heartbeat', image: 'image/thesunsheartbeat.png'}
+          ]
+        },
+        {
+          seriesTitle: 'Del Fierro Series',
+          books: [
+            { title: 'One Rebellious Night', image: 'image/one rebillious night.jpg' },
+            { title: 'The Beast In Paradise', image: 'image/the beast in paradise.jpg' },
+            { title: 'Giving You Wildfire', image: 'image/giving you wildfire.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Elizalde Brothers Series',
+          books: [
+            { title: 'Heartless', image: 'image/heartless.png' },
+            { title: 'Worthless', image: 'image/worthless.jpg' }
+          ]
+        },
+        {
+          seriesTitle: 'Good Lips Series',
+          books: [
+            { title: 'Every Beast Needs A Beauty', image: 'image/every beauty needs a beast.png' },
+            { title: 'One Night, One Lie', image: 'image/one night one lie.png' },
+            { title: 'Give In To You', image: 'image/give in to you.jfif' }
+          ]
+        },
+        {
+          seriesTitle: 'Jimenez Cousins Series',
+          books: [
+            { title: 'Invisible Man', image: 'image/invisible man.png' },
+            { title: 'No Perfect Prince', image: 'image/no perfect prince.png' },
+            { title: 'Chase & Hearts', image: 'image/chase and hearts.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Montefalco Series',
+          books: [
+            { title: 'Until He Was Gone', image: 'image/until_he_was_gone.jpg' },
+            { title: 'Until He Returned', image: 'image/Until He Returned.jpg' },
+            { title: 'Until Forever', image: 'image/Until Forever.jfif' },
+            { title: 'To Stay', image: 'image/To Stay.png' },
+            { title: 'To Fall Again', image: 'image/To Fall Again.png' },
+            { title: 'To Be With You', image: 'image/To Be With You.jpg' },
+            { title: 'To Get Over You', image: 'image/To Get Over You.png' },
+            { title: 'From Afar', image: 'image/From Afar.jfif' },
+            { title: 'Stay Forever', image: 'image/Stay Forever.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Nuevo Series',
+          books: [
+            { title: 'From The Start', image: 'image/from_the_start.jpg' },
+            { title: 'It Was You', image: 'image/it was you.jfif' },
+            { title: 'Till The Very End', image: 'image/till the very end.jfif' }
+          ]
+        },
+        {
+          seriesTitle: 'One Shot',
+          books: [
+            { title: 'Nung Na-realize Mo Na', image: 'image/Nung Na-realize Mo Na.png' }
+          ]
+        },
+        {
+          seriesTitle: 'Rara Avis Series',
+          books: [
+            { title: 'Shelter In Your Fingertips', image: 'image/Shelter In Your Fingertips.jpg' },
+            { title: 'A Call To Your Arms', image: 'image/A Call To Your Arms.jpg' },
+            { title: 'Rushing Through My Veins', image: 'image/Rushing Through My Veins.png' },
+            { title: 'Never Just Skin Deep', image: 'image/Never Just Skin Deep.png' },
+          ]
+        },
+        {
+          seriesTitle: 'Stand Alone Old Series',
+          books: [
+            { title: 'Downfall Chronicles', image: 'image/Downfall Chronicles.png' },
+            { title: 'Just That', image: 'image/Just That.png' },
+            { title: '24 Signs Of Summer', image: 'image/24 Signs Of Summer.png' },
+            { title: 'Remembering Summer', image: 'image/Remembering Summer.png' },
+          ]
+        },
+        {
+          seriesTitle: 'Viejo Series',
+          books: [
+            { title: 'Light A Candle', image: 'image/Light A Candle.png' },
+            { title: 'In Front Of The Mirror', image: 'image/In Front Of The Mirror.png' },
+            { title: 'At Midnight', image: 'image/At Midnight.png' }
+          ]
+        }
+      ];
+    
+      function displayResults(filteredBooks) {
+  const resultsContainer = document.getElementById('results');
+  resultsContainer.innerHTML = '';
+
+  // Loop over each series
+  seriesData.forEach(series => {
+    // Filter only matching books for this series
+    const matchingBooks = series.books.filter(book =>
+      filteredBooks.some(fb => fb.title === book.title)
+    );
+
+    if (matchingBooks.length > 0) {
+      // Create series section
+      const seriesSection = document.createElement('div');
+      seriesSection.classList.add('seriesname');
+
+      // Series title
+      const title = document.createElement('h2');
+      title.textContent = series.seriesTitle;
+      seriesSection.appendChild(title);
+
+      // Book container
+      const booksContainer = document.createElement('div');
+      booksContainer.classList.add('books');
+
+      // Add books
+      matchingBooks.forEach(book => {
+        console.log(book.title, book.class);
+        const bookDiv = document.createElement('div');
+        bookDiv.classList.add('book');
+        bookDiv.innerHTML = `
+        <a href="books/${book.title.replaceAll(' ', '_').toLowerCase()}.html" style="text-decoration: none; color: inherit;">
+          <img src="${book.image}" alt="${book.title}">
+          <p class="${book.class}">${book.title}</p>
+        </a>
+      `;
+      booksContainer.appendChild(bookDiv);
+      });
+
+      seriesSection.appendChild(booksContainer);
+      resultsContainer.appendChild(seriesSection);
+    }
+  });
+
+  if (filteredBooks.length === 0) {
+    resultsContainer.innerHTML = '<p>No results found.</p>';
+  }
+}
+
+      function search() {
+        const query = document.getElementById('search-bar').value.toLowerCase();
+    
+        if (query === "") {
+          const allBooks = seriesData.flatMap(series => series.books);
+          displayResults(allBooks);
+          return;
+        }
+    
+        const filteredBooks = seriesData.flatMap(series =>
+          series.books.filter(book =>
+            book.title.toLowerCase().includes(query)
+          )
+        );
+    
+        displayResults(filteredBooks);
+      }
+    
+
+      const allBooks = seriesData.flatMap(series => series.books);
+      displayResults(allBooks);
+    </script>
+    
+    
+    
+    
+    
+
+</body>
+</html>

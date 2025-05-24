@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="responsive.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <title>Jonaxx Story</title>
+ <style>
+/* Base Reset and Typography */
+
+.content-wrapper {
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Card Styles */
+.card {
+  border: 2px solid #ff69b4; /* hotpink border */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(255, 105, 180, 0.15);
+  padding: 20px 25px;
+  margin-bottom: 25px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 20px rgba(255, 105, 180, 0.3);
+  transform: translateY(-5px);
+}
+
+/* Headings */
+.card h2, .card h3 {
+  color: #ff1493; /* deep pink */
+  margin-top: 0;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid #ff69b4;
+  padding-bottom: 6px;
+}
+
+.card h3 {
+  font-size: 1.3rem;
+}
+
+/* Paragraph */
+.card p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 6px 0;
+  color: white;
+}
+
+/* Facts */
+p.fact {
+  font-weight: 200;
+  color: white;
+}
+
+.strong {
+  color: #dd4182;
+  font-weight: 700;
+  margin-right: 0.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* Link Row */
+.link-row {
+  margin-top: 15px;
+}
+
+.link-row a {
+  color: #ff1493;
+  text-decoration: none;
+  font-weight: 600;
+  margin-right: 20px;
+  transition: color 0.3s ease;
+}
+
+.link-row a:hover {
+  color: white;
+}
+
+/* Quote style */
+.card .quote {
+  font-style: italic;
+  font-weight: 500;
+  color: #dd4182;
+  border-left: 4px solid #ff1493;
+  padding-left: 12px;
+  margin: 12px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .content-wrapper {
+    padding: 0 10px;
+  }
+
+  .card {
+    padding: 15px 18px;
+  }
+
+  .card h2 {
+    font-size: 1.3rem;
+  }
+
+  .card h3 {
+    font-size: 1.1rem;
+  }
+
+  .link-row a {
+    display: inline-block;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding: 10px;
+  }
+
+  .card {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+  }
+
+  .card h2 {
+    font-size: 1.1rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .link-row a {
+    font-size: 0.9rem;
+    margin-right: 12px;
+  }
+}
+
+  
+
+
+.app-links, .social-links {
+  margin-top: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.app-link, .social-link {
+  background-color: #ff69b4;
+  color: white;
+  font-weight: 600;
+  padding: 10px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-link:hover, .social-link:hover {
+  background-color: #ff1493;
+}
+
+.app-icon, .social-icon {
+  font-size: 1.2rem;
+}
+
+
+  .coverflow {
+    display: flex;
+    gap: 15px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 10px;
+  }
+  .img-wrapper {
+    flex: 0 0 auto;
+    width: 180px;
+    height: 270px;
+    border-radius: 15px;
+    overflow: hidden;
+    cursor: pointer;
+    opacity: 0.5;
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: relative;
+  }
+  .img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    transition: transform 0.4s ease;
+    transform-origin: center center;
+    transform: scale(0.65);
+  }
+  .img-wrapper.active {
+    opacity: 1;
+    transform: scale(0.85);
+    z-index: 10;
+  }
+  .img-wrapper.active img {
+    transform: scale(1);
+  }
+
+     
+::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+
+
+
+</style>
+
+
+</head>
+<body>
+  <div class="navigation">
+    <div class="logo">Jonaxx Story Journal</div>
+
+    <div class="burger">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+
+    <div class="navi">
+      <a href="index.html">Home</a>
+      <a href="journal.html">Journal</a>
+      <a href="jonaxx.html" class="active">Jonaxx</a>
+      <a href="Profile.html">Profile</a>
+    </div>
+  </div>
+
+  <div class="content-wrapper">
+    <div class="cardsss" style="visibility: hidden;">
+      <h2>About the Author – Jonaxx</h2>
+      <h3>Who is Jonaxx?</h3>
+      <p>Jonahmae Panen Pacala, known to millions as Jonaxx, is a legendary Filipino author best known for her emotionally gripping and plot-twisting stories. She started writing at the age of 9 and hasn’t stopped since. With her powerful narratives, unforgettable characters, and raw portrayal of love and pain, she has earned her place as the Pop Fiction Queen and one of the most followed authors worldwide on Wattpad.</p>
+    </div>
+    <div class="card">
+      <h2>About the Author – Jonaxx</h2>
+      <h3>Who is Jonaxx?</h3>
+      <p>Jonahmae Panen Pacala, known to millions as Jonaxx, is a legendary Filipino author best known for her emotionally gripping and plot-twisting stories. She started writing at the age of 9 and hasn’t stopped since. With her powerful narratives, unforgettable characters, and raw portrayal of love and pain, she has earned her place as the Pop Fiction Queen and one of the most followed authors worldwide on Wattpad.</p>
+    </div>
+
+    <div class="card">
+  <div class="coverflow" id="coverflow">
+    <div class="img-wrapper active">
+      <img src="images/j1.jpg" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j2.jfif" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j3.jfif" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j5.jfif" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j6.jfif" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j7.jpg" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j8.jpg" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j9.jpg" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j10.jfif" alt="Image 1" />
+    </div>
+    <div class="img-wrapper">
+      <img src="images/j4.jfif" alt="Image 1" />
+    </div>
+    
+    
+  </div>
+</div>
+
+    <div class="card">
+      <h3>Fast Facts About Jonaxx</h3>
+      <p class="fact"><strong class="strong">Full Name:</strong> Jonahmae Panen Pacala</p>
+      <p class="fact"><strong class="strong">Birthday:</strong> January 23, 1991</p>
+      <p class="fact"><strong class="strong">Education:</strong> Degree in Early Childhood Education (Graduated 2011)</p>
+      <p class="fact"><strong class="strong">Loves:</strong> Dogs, unicorns, the beach, photography, kids</p>
+      <p class="fact"><strong class="strong">Favorite Color:</strong> Red</p>
+      <p class="fact"><strong class="strong">Favorite Chocolate Bar:</strong> Ritter Sport</p>
+      <p class="fact"><strong class="strong">Favorite Vegetable:</strong> Lettuce</p>
+      <p class="fact"><strong class="strong">Favorite Author:</strong> Jane Austen</p>
+      <p class="fact"><strong class="strong">Favorite Movies:</strong> Divergent, Harry Potter, and anything medieval-themed</p>
+      <p class="fact"><strong class="strong">Ideal Man:</strong> Riguel (from Ask Jonaxx)</p>
+      <p class="fact"><strong class="strong">Goal:</strong> Wants to marry when she’s a millionaire</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Writing Journey</h3>
+      <p><strong class="strong">Started writing at age:</strong> 9; online at age 12 (Creative Corner)</p>
+      <p><strong class="strong">First story:</strong> Shakespeare in Love (written at age 12)</p>
+      <p><strong class="strong">First published book:</strong> Mapapansin Kaya (with multiple reprints)</p>
+      <p><strong class="strong">First self-published book:</strong> 24 Signs of Summer (24SOS)</p>
+      <p><strong class="strong">Exclusive publisher:</strong> Only author under Mpress, her exclusive publishing imprint under Summit</p>
+      <p><strong class="strong">2013:</strong> Writer of the Year + Best Story of the Year (Baka Sakali)</p>
+      <p><strong class="strong">2014:</strong> Gawad Kasulatan Awardee</p>
+      <p><strong class="strong">2015:</strong> Won Filipino Readers’ Choice Award (Heartless)</p>
+      <p><strong class="strong">Milestone:</strong> First Wattpad author to hold a booksigning in an arena (Baka Sakali Trilogy)</p>
+    </div>
+
+
+    <div class="card">
+      <h3>Wattpad Achievements</h3>
+      <p>First verified Filipino Wattpad author with over 2M followers</p>
+      <p>Followed by Allen Lau (Wattpad founder)</p>
+      <p>First to use “This is a work of fiction...” at the beginning of stories</p>
+      <p>45.5M+ votes on Wattpad</p>
+      <p>23 stories with over 1M votes</p>
+      <p>Most followed Wattpad author in the world</p>
+      <p>Known for jaw-dropping plot twists and unique storytelling</p>
+    </div>
+
+    <div class="card">
+      <h3>Her Stories</h3>
+      <p>12 books published under Summit Books</p>
+      <p>14 books self-published</p>
+      <p>42+ total stories</p>
+      <p>Notable titles: Mapapansin Kaya, Heartless, Baka Sakali, Every Beast Needs a Beauty, Until He Was Gone, Worthless, and many more</p>
+      <p>Wants to publish Worthless and Why Do You Hate Me?</p>
+      <div class="link-row">
+        <a href="#">View Full List of Stories</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Fun & Personal Tidbits</h3>
+      <p>Loves teaching — a kinder/preschool teacher by profession</p>
+      <p>Writes impromptu-style; rarely plans her stories</p>
+      <p>Always reads comments from JSLs</p>
+      <p>Doesn’t like reading stories online due to eye strain</p>
+      <p>Known as “bully” (especially because of the haircut post)</p>
+      <p>Loves kids — the reason she pursued teaching</p>
+      <p>Celebrates simplicity, friends, and honesty in her stories and life</p>
+      <p>If she were a scientist, she’d invent a time machine</p>
+      <p>Wanted to get married at 16 (a childhood dream!)</p>
+    </div>
+
+    <div class="card">
+      <h3>Featured In</h3>
+      <p>YES! Magazine – August 2017 Issue</p>
+      <p>Massive book signing events that became Wattpad history</p>
+      <p>Honored as the Summit Media Queen</p>
+    </div>
+
+      <div class="card">
+  <h3>Get the Jonaxx Stories App</h3>
+  <div class="app-links">
+    <a href="https://play.google.com/store/apps/details?id=com.jonaxx.stories" target="_blank" class="app-link">
+      <i class="fa-brands fa-google-play app-icon"></i>
+      Get it on Google Play
+    </a>
+    <a href="https://apps.apple.com/us/app/jonaxx-stories/id1513864111" target="_blank" class="app-link">
+      <i class="fa-brands fa-app-store-ios app-icon"></i>
+      Download on App Store
+    </a>
+  </div>
+
+  <h3>Connect with Jonaxx</h3>
+  <div class="social-links">
+    <a href="https://www.wattpad.com/user/jonaxx" class="social-link" target="_blank">
+      <i class="fa-brands fa-wattpad social-icon"></i> Wattpad
+    </a>
+    <a href="https://www.facebook.com/jonaxxWP" class="social-link" target="_blank">
+      <i class="fa-brands fa-facebook social-icon"></i> Facebook
+    </a>
+    <a href="https://www.instagram.com/jonahthebully/" class="social-link" target="_blank">
+      <i class="fa-brands fa-instagram social-icon"></i> Instagram
+    </a>
+    <a href="https://jonaxxstories.com/" class="social-link" target="_blank">
+      <i class="fa-solid fa-globe social-icon"></i> Official Website
+    </a>
+  </div>
+</div>
+
+
+
+
+
+    <div class="card">
+      <h3>Message from the JSLs</h3>
+      <p class="quote">“Jonaxx isn't just a writer. She's a comfort space, a storyteller who makes us feel seen.” — @JSLFanHeart</p>
+    </div>
+
+    <div class="card">
+      <h3>Jonaxx is the best.</h3>
+      <p>No words can describe her influence — she is a movement, a comfort zone, and a world-builder. With every twist, every character, and every story, she continues to inspire millions.</p>
+      <div class="link-row">
+        <a href="#">Read Her Stories</a>
+        <a href="#">Meet the Characters</a>
+        <a href="#">Join the JSL Community</a>
+      </div>
+    </div>
+  </div>
+
+
+  <footer class="footer">
+        <div class="footer-content">
+            <div class="disclaimer">
+                <strong>Fan-Created Website Disclaimer:</strong> This website is created by fans, for fans, and is not officially affiliated with Jonaxx or any publishing entities. All content related to Jonaxx's works is property of their respective owners. This is a non-profit fan project created to celebrate and share our love for Jonaxx stories.
+            </div>
+            <div class="disclaimer">
+                For official content and updates, please visit Jonaxx's official social media accounts and download the official Jonaxx Stories app.
+            </div>
+            <div class="footer-links">
+                <a href="terms.html" class="footer-link">Terms of Use</a>
+                <a href="#" class="footer-link">Privacy Policy</a>
+                <a href="#" class="footer-link">Contact Us</a>
+                <a href="#" class="footer-link">About JSL Community</a>
+            </div>
+            <div class="copyright">
+                © 2025 Jonaxx Story Journal - A Fan Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+  <script src="script.js"></script>
+
+<script>
+  const coverflow = document.getElementById('coverflow');
+  const wrappers = coverflow.querySelectorAll('.img-wrapper');
+
+  wrappers.forEach(wrapper => {
+    wrapper.addEventListener('click', () => {
+      wrappers.forEach(w => w.classList.remove('active'));
+      wrapper.classList.add('active');
+
+      const wrapperRect = wrapper.getBoundingClientRect();
+      const coverflowRect = coverflow.getBoundingClientRect();
+      const currentScroll = coverflow.scrollLeft;
+      const offset = wrapperRect.left - coverflowRect.left;
+      const targetScroll = currentScroll + offset - (coverflowRect.width / 2) + (wrapperRect.width / 2);
+
+      coverflow.scrollTo({
+        left: targetScroll,
+        behavior: 'smooth'
+      });
+    });
+  });
+</script>
+</body>
+</html>

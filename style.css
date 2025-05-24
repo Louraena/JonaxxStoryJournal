@@ -1,0 +1,128 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    background-color: rgb(249, 138, 157);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    box-shadow: 0px 10px 20px 0px rgb(239, 111, 132);
+  }
+  
+  .burger {
+    display: none; 
+    cursor: pointer;
+    z-index: 9999;
+  }
+  
+  .burger .bar {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .navi {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  
+  .logo {
+    font-size: 1.5rem;
+    color: white;
+    z-index: 9999;
+  }
+  
+.navi a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  padding-left: 1.5rem;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+
+
+.navi a:hover, a.active {
+  color: rgb(241, 96, 120); 
+  text-decoration: underline;
+  text-underline-offset: 7px;
+}
+
+
+
+
+  .burger.active .bar:nth-child(1) {
+    transform: rotate(45deg);
+    position: relative;
+    top: 7px;
+  }
+  
+  .burger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .burger.active .bar:nth-child(3) {
+    transform: rotate(-45deg);
+    position: relative;
+    top: -7px;
+  }
+
+  .footer {
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
+
+.footer .footer-content {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.footer .disclaimer {
+    margin-bottom: 15px;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.footer .footer-links {
+    margin: 10px 0;
+}
+
+.footer .footer-link {
+    display: inline-block;
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.footer .footer-link:hover {
+    text-decoration: underline;
+}
+
+.footer .copyright {
+    font-size: 13px;
+    margin-top: 15px;
+    color: #fbeaec; /* softer white for readability */
+}
+
+
+
+
+
+
+

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Jonaxx Story Journal</title>
+  <style>
+        .container {
+        width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .section {
+            margin: 40px 0;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .sections {
+            margin: 40px 0;
+            padding: 20px;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .featured-stories-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .story-card {
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+        
+        .story-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .story-cover {
+            width: 50%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .story-title {
+            font-size: 24px;
+            color: #ffff;
+            margin: 10px 0;
+        }
+        
+        .story-series {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .story-author {
+      color: white;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        
+        .story-tags {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .tag {
+            background: #f8d7da;
+            color: rgb(241, 96, 120);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+        }
+        
+        .review {
+            margin: 15px 0;
+            padding: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 5px;
+        }
+        
+        .genre-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .genre-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px 20px;
+      text-align: center;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .genre-card:hover {
+            transform: translateY(-5px);
+            border-color: rgb(241, 96, 120);
+        }
+        
+        .genre-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        
+        .genre-name {
+            color: white;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .genre-description {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            line-height: 1.4;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: rgb(241, 96, 120);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px 0;
+            transition: background 0.3s;
+        }
+        
+        .cta-button:hover {
+            background: white;
+            color: rgb(241, 96, 120);
+        }
+        
+        h1, h2, h3 {
+            color: white;
+        }
+        
+        p {
+            color: white;
+            line-height: 1.6;
+        }
+        
+        .reviews-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .review-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            text-align: left;
+            transition: transform 0.3s;
+        }
+        
+        .review-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .reviewer-info {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .reviewer-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            background: rgb(241, 96, 120);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: white;
+        }
+        
+        .reviewer-name {
+            color: white;
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+        
+        .review-stars {
+            color: gold;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .review-text {
+            color: white;
+            font-size: 14px;
+            line-height: 1.6;
+            font-style: italic;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .about-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+        
+        .about-card:hover {
+            transform: translateY(-5px);
+            border-color: rgb(241, 96, 120);
+        }
+        
+        .author-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        .author-description {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+        
+        .author-name {
+            color: white;
+            font-size: 28px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .author-text {
+            color: white;
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            display: flex;
+            align-items: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+        
+        .social-link:hover {
+            color: rgb(241, 96, 120);
+        }
+        
+        .social-icon {
+            font-size: 20px;
+            margin-right: 8px;
+        }
+        
+        .app-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .app-link {
+            display: flex;
+            align-items: center;
+      color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+        
+        .app-link:hover {
+            background: rgb(241, 96, 120);
+            border-color: rgb(241, 96, 120);
+        }
+        
+        .app-icon {
+            font-size: 24px;
+            margin-right: 10px;
+        }
+        
+        .how-to-use {
+            margin-top: 40px;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .feature-card {
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+      text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgb(241, 96, 120);
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            color: rgb(241, 96, 120);
+            margin-bottom: 15px;
+        }
+        
+        .feature-text {
+            color: white;
+            font-size: 16px;
+            line-height: 1.4;
+        }
+
+        /* Responsive adjustments */
+@media (max-width: 1024px) {
+  .featured-stories-grid,
+  .genre-grid,
+  .reviews-grid,
+  .features-grid,
+  .about-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-cover {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-stories-grid,
+  .genre-grid,
+  .reviews-grid,
+  .features-grid,
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 15px;
+  }
+
+  .story-title {
+    font-size: 20px;
+  }
+
+  .story-series,
+  .story-author,
+  .genre-name,
+  .reviewer-name,
+  .feature-text {
+    font-size: 14px;
+  }
+
+  .author-name {
+    font-size: 22px;
+  }
+
+  .author-text {
+    font-size: 14px;
+  }
+
+  .cta-button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+
+  .genre-card,
+  .review-card,
+  .feature-card,
+  .about-card {
+    padding: 20px;
+  }
+
+  .app-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .reviewer-info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviewer-avatar {
+    margin-bottom: 10px;
+  }
+
+  .social-links {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .story-title {
+    font-size: 18px;
+  }
+
+  .genre-name {
+    font-size: 16px;
+  }
+
+  .container {
+    width: 100%;
+  }
+}
+
+        
+        
+  </style>
+</head>
+<body>
+    <div class="navigation">
+        <div class="logo">Jonaxx Story Journal</div>
+        <div class="burger">
+          <div class="bar"></div>
+          <div class="bar"></div>
+          <div class="bar"></div>
+        </div>
+        <div class="navi">
+          <a href="index.html" class="active">Home</a>
+          <a href="journal.html">Journal</a>
+          <a href="jonaxx.html">Jonaxx</a>
+          <a href="Profile.html">Profile</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Welcome Section -->
+        <div class="sections">
+            <h1>Welcome to Jonaxx Story Journal</h1>
+      <p>Your ultimate destination for everything related to the captivating world of Jonaxx stories. Here, JSLs can rate their favorite Jonaxx stories, share their thoughts, and discover new ones to add to their collection. Explore detailed information about Jonaxx, the author behind these unforgettable tales, and dive deep into the plotlines, characters, and themes that make each story special. Whether you're a long-time JSL or a newcomer, this is the place to connect with fellow JSLs, celebrate your favorites, and learn more about the stories that have captured hearts worldwide.</p>
+    </div>
+
+        <!-- Featured Stories Section -->
+        <div class="section">
+            <h2>Featured Stories of the Month</h2>
+            <p>Discover what's trending among JSLs!</p>
+            
+            <div class="featured-stories-grid">
+                <div class="story-card">
+                    <img src="image/until_he_was_gone.jpg" alt="Until He Was Gone Cover" class="story-cover">
+                    <h3 class="story-title">Until He Was Gone</h3>
+                    <div class="story-series">Until Trology Series</div>
+                    <div class="story-author">by Jonaxx</div>
+                    <div class="story-tags">
+                        <span class="tag">Fiction</span>
+                        <span class="tag">Romance</span>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <img src="image/every beauty needs a beast.png" alt="Every Beast Needs a Beauty Cover" class="story-cover">
+                    <h3 class="story-title">Every Beast Needs a Beauty</h3>
+                    <div class="story-series">Alegria Boys Series</div>
+                    <div class="story-author">by Jonaxx</div>
+                    <div class="story-tags">
+                        <span class="tag">Fiction</span>
+                        <span class="tag">Romance</span>
+                    </div>
+                </div>
+                
+                <div class="story-card">
+                    <img src="image/endthiswar.png" alt="End this war cover" class="story-cover">
+                    <h3 class="story-title">End This War</h3>
+                    <div class="story-series">Alegria Boys Series</div>
+                    <div class="story-author">by Jonaxx</div>
+                    <div class="story-tags">
+                        <span class="tag">Fiction</span>
+                        <span class="tag">Romance</span>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="journal.html" class="cta-button">Explore All Stories</a>
+        </div>
+
+        <!-- Reviews Section -->
+        <div class="section">
+            <h2>Latest Reviews from JSLs</h2>
+            <p>See what others are saying!</p>
+            
+            <div class="reviews-grid">
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">M</div>
+                        <div>
+                            <div class="reviewer-name">@MariaJSL</div>
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Oo, masakit ang Baka Sakali pero sobrang worth it basahin. Because Jacob and Rosie's story taught us na hindi masamang.. mag Baka Sakali.."</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">J</div>
+                        <div>
+                            <div class="reviewer-name">@JanelleReads</div>
+                            <div class="review-stars">⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"I always want to experience the highschool love of Lili and Riguel. The secret glances, yung maghihintay ka sa uwian para lang masilayan siya, yung sabay kayong mag-aaral sa library, kakain ng street foods after a tiring day, sabay mag lunch at recess, bubuhatin niya bag mo, at sabay kayong uuwi habang nagkwekwento kung anong nangyari sa araw niyo. 💝"</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="reviewer-info">
+                        <div class="reviewer-avatar">J</div>
+                        <div>
+                            <div class="reviewer-name">@JSLLover24</div>
+                            <div class="review-stars">⭐⭐⭐⭐⭐</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"gusto ko ng calm and soft spoken na alonzo salvaterra, will defend you in public and correct you in private na radleigh riego, ako lang finofollow sa ig na theron hidalgo, ihahatid ako sa bahay na riguel alleje, what my baby wants, my baby gets na kajik mercadejas"</p>
+                </div>
+            </div>
+            
+            <a href="review.html" class="cta-button">Read More Reviews</a>
+        </div>
+
+        <!-- About Jonaxx Section -->
+        <div class="section">
+            <h2>About Jonaxx</h2>
+            
+            <div class="about-grid">
+                <div class="about-card">
+                    <img src="images/j1.jpg" alt="Jonaxx" class="author-image">
+                </div>
+                
+                <div class="about-card author-description">
+                    <div class="author-name">Jonaxx</div>
+                    <div class="author-text">
+                        Jonahmae Panen Pacala, popularly known as Jonaxx, is one of the most beloved Filipino authors in the digital age. Her emotionally intense and gripping stories on Wattpad and PopFiction have captured millions of hearts worldwide.
+                    </div>
+                    <div class="author-text">
+                        With her raw and powerful storytelling, she continues to inspire readers through unforgettable characters and compelling narratives that resonate deeply with her audience.
+                    </div>
+                    <div class="author-text">
+                        Read Jonaxx's stories anytime, anywhere! Download the official Jonaxx Stories app, now available with over 1M+ downloads and a 4.6-star rating.
+                    </div>
+                    <div class="app-links">
+                        <a href="https://play.google.com/store/apps/details?id=com.jonaxx.stories" target="_blank" class="app-link">
+                            <i class="fa-brands fa-google-play app-icon"></i>
+                            Get it on Google Play
+                        </a>
+                        <a href="https://apps.apple.com/us/app/jonaxx-stories/id1513864111" target="_blank" class="app-link">
+                            <i class="fa-brands fa-app-store-ios app-icon"></i>
+                            Download on App Store
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.wattpad.com/user/jonaxx" class="social-link" target="_blank">
+                            <i class="fa-solid fa-w social-icon"></i>
+                            Wattpad
+                        </a>
+                        <a href="https://www.facebook.com/jonaxxWP" class="social-link" target="_blank">
+                            <i class="fa-brands fa-facebook social-icon"></i>
+                            Facebook
+                        </a>
+                        <a href="https://www.instagram.com/jonahthebully/" class="social-link" target="_blank">
+                            <i class="fa-brands fa-instagram social-icon"></i>
+                            Instagram
+                        </a>
+                        <a href="https://jonaxxstories.com/" class="social-link" target="_blank" target="_blank">
+                          <i class="fa-solid fa-globe social-icon"></i> Official Website
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <a href="jonaxx.html" class="cta-button">Read Her Full Journey</a>
+        </div>
+
+        <!-- Genre Section -->
+        <div class="section">
+            <h2>Explore Stories by Genre</h2>
+            <p>Choose your vibe:</p>
+            
+            <div class="genre-grid">
+                <div class="genre-card">
+                    <div class="genre-icon">📚</div>
+                    <div class="genre-name">Teen Fiction</div>
+                    <div class="genre-description">Stories that capture the essence of teenage life, love, and growth</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">🌟</div>
+                    <div class="genre-name">Young Adult Fiction</div>
+                    <div class="genre-description">Coming-of-age tales filled with adventure and self-discovery</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">🎭</div>
+                    <div class="genre-name">Psychological Fiction</div>
+                    <div class="genre-description">Deep dives into complex emotions and mental landscapes</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">💝</div>
+                    <div class="genre-name">Romance Novel</div>
+                    <div class="genre-description">Heart-warming stories of love, passion, and relationships</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">✨</div>
+                    <div class="genre-name">Romantic Fantasy</div>
+                    <div class="genre-description">Where love meets magic and extraordinary possibilities</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">🎓</div>
+                    <div class="genre-name">Campus Love</div>
+                    <div class="genre-description">Sweet and exciting romances set in school life</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">📖</div>
+                    <div class="genre-name">Fiction</div>
+                    <div class="genre-description">Imaginative stories that transport you to new worlds</div>
+                </div>
+
+                <div class="genre-card">
+                    <div class="genre-icon">🌙</div>
+                    <div class="genre-name">New Adult</div>
+                    <div class="genre-description">Stories exploring the challenges of early adulthood</div>
+                </div>
+            </div>
+            
+            <a href="categories.html" class="cta-button">View All Categories</a>
+        </div>
+
+        <!-- How to Use Section -->
+        <div class="section how-to-use">
+            <h2>How to Use This Site</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-star"></i>
+                    </div>
+                    <div class="feature-text">Rate and review Jonaxx stories</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-compass"></i>
+                    </div>
+                    <div class="feature-text">Browse by genre, theme, or series</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-list-check"></i>
+                    </div>
+                    <div class="feature-text">Keep track of your reading list</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-comments"></i>
+                    </div>
+                    <div class="feature-text">Join fan discussions</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-pen-to-square"></i>
+                    </div>
+                    <div class="feature-text">Submit your own thoughts and rankings</div>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <div class="feature-text">Save your favorite stories</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="disclaimer">
+                <strong>Fan-Created Website Disclaimer:</strong> This website is created by fans, for fans, and is not officially affiliated with Jonaxx or any publishing entities. All content related to Jonaxx's works is property of their respective owners. This is a non-profit fan project created to celebrate and share our love for Jonaxx stories.
+            </div>
+            <div class="disclaimer">
+                For official content and updates, please visit Jonaxx's official social media accounts and download the official Jonaxx Stories app.
+            </div>
+            <div class="footer-links">
+                <a href="terms.html" class="footer-link">Terms of Use</a>
+                <a href="Pri_Po.html" class="footer-link">Privacy Policy</a>
+                <a href="Contact.html" class="footer-link">Contact Us</a>
+                <a href="JSL.html" class="footer-link">About JSL Community</a>
+            </div>
+            <div class="copyright">
+                © 2025 Jonaxx Story Journal - A Fan Project. All rights reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>
